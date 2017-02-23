@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import SearchBar from './components/search_bar';
 
-import App from './components/app';
-import reducers from './reducers';
+const API_Key = 'AIzaSyDoBwOIRgPfUjtxlcUJ5y4NnUczmUOwoWM';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// create a new component. That component will produce html
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+const App = () => (
+  <div>
+    <SearchBar />
+  </div>
+  );
+
+
+//take the componenet's generated html and put it on the page (DOM)
+ReactDOM.render(<App />, document.querySelector('.container'));
